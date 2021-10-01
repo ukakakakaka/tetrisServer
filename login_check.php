@@ -16,7 +16,7 @@ if($result->num_rows==1){
             //echo "Connecting";
             if( $platform == "unity")
             {
-                echo("Succes");
+                echo("success");
             }
             else
             {
