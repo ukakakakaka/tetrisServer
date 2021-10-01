@@ -2,7 +2,7 @@
 session_start();
 $id=$_POST['id'];
 $pw=$_POST['pw'];
-
+$platform=$_POST['platform'];
 $mysqli=mysqli_connect("localhost","root","root","tetrisGame");
 
 $check="SELECT * FROM user WHERE id='$id'";
@@ -14,19 +14,26 @@ if($result->num_rows==1){
         if(isset($_SESSION['id']))    //세션 변수가 참일 때
         {
             //echo "Connecting";
-            header('Location: ./main.php');   //로그인 성공 시 페이지 이동
+            if( $platform == "unity")
+            {
+                echo("Succes");
+            }
+            else
+            {
+                 header('Location: ./main.php');   //로그인 성공 시 페이지 이동
+            }
         }
         else{
             echo "세션 저장 실패";
         }            
     }
     else{
-        echo $result->num_rows;
+       // echo $result->num_rows;
         echo "wrong id or pw";
     }
 }
 else{
-    echo $result->num_rows;
+   // echo $result->num_rows;
     echo "wrong id or pw";
 }
 ?>
