@@ -45,4 +45,18 @@ function LogOut($act)
     echo("<script>location.replace('$act');</script>");
 }
 #endregion <<< Logout
+
+#region >>> ReSign
+function ReSign($act)
+{
+    $id = $_POST['id'];
+    $pw = $_POST['pw'];
+
+    echo("<form name='ReSign' action='$act' method='post'>");
+    echo("<input type='hidden' name='id' value='$id'>");
+    echo("</form> <script language='javascript'> document.ReSign.submit(); </script>");
+    echo("<script>location.replace('$act');</script>");
+}
+#endregion <<< ReSign
+
 ?>

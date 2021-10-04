@@ -37,8 +37,6 @@ if ($result->num_rows >= 1) {
 } else {
     $signup = mysqli_query($mysqli, "INSERT INTO user (id, pw) 
     VALUES ('$id','$pw')");
-    mysqli_close($mysqli);
-
     if ($signup) {
         $json['result'] = true;
         $json['message'] = $id . "가입 성공";
@@ -47,6 +45,7 @@ if ($result->num_rows >= 1) {
         $json['message'] = "DB 추가 에러";
     }
 }
+mysqli_close($mysqli);
 $json = json_encode($json);
 $json = "{\"signUp\":" . $json . '}';
 print_r($json);
