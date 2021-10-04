@@ -37,9 +37,6 @@ function LoginCheck($act)
 #region >>> Logout
 function LogOut($act)
 {
-    $id = $_POST['id'];
-    $pw = $_POST['pw'];
-
     echo("<form name='LogOut' action='$act' method='post'>");
     echo("</form> <script language='javascript'> document.LogOut.submit(); </script>");
     echo("<script>location.replace('$act');</script>");
@@ -50,7 +47,7 @@ function LogOut($act)
 function ReSign($act)
 {
     $id = $_POST['id'];
-    $pw = $_POST['pw'];
+
 
     echo("<form name='ReSign' action='$act' method='post'>");
     echo("<input type='hidden' name='id' value='$id'>");
@@ -59,4 +56,16 @@ function ReSign($act)
 }
 #endregion <<< ReSign
 
+
+#region >>> Ranking
+function Ranking($act)
+{
+    $id = $_POST['id'];
+
+    echo("<form name='Ranking' action='$act' method='post'>");
+    echo("<input type='hidden' name='id' value='$id'>");
+    echo("</form> <script language='javascript'> document.Ranking.submit(); </script>");
+    echo("<script>location.replace('$act');</script>");
+}
+#endregion <<< ReSign
 ?>

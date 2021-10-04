@@ -35,8 +35,8 @@ if ($result->num_rows >= 1) {
     $json['result'] = false;
     $json['message'] = "중복된 id입니다";
 } else {
-    $signup = mysqli_query($mysqli, "INSERT INTO user (id, pw) 
-    VALUES ('$id','$pw')");
+    $signup = mysqli_query($mysqli, "INSERT INTO user (id, pw, rank, score) 
+    VALUES ('$id','$pw',0,0)");
     if ($signup) {
         $json['result'] = true;
         $json['message'] = $id . "가입 성공";
