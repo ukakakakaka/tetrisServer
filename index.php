@@ -68,4 +68,19 @@ function Ranking($act)
     echo("<script>location.replace('$act');</script>");
 }
 #endregion <<< ReSign
+
+#region >>> SingleStagClear
+function SingleGameResult($act)
+{
+    $id = $_POST['id'];
+
+    $score = $_POST['score'];
+    echo("<form name='SingleGameResult' action='$act' method='post'>");
+    echo("<input type='hidden' name='id' value='$id'>");
+    echo("<input type='hidden' name='score' value='$score'>");
+    echo("</form> <script language='javascript'> document.SingleGameResult.submit(); </script>");
+    echo("<script>location.replace('$act');</script>");
+}
+#endregion <<< SingleStagClear
+
 ?>
