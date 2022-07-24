@@ -4,7 +4,7 @@ function GetUserInfo($islocal, $json, $id)
 {
     if ($islocal) {
         //local Server DB
-        $conn = mysqli_connect("localhost", "root", "root", "tetrisGame");
+        $conn = mysqli_connect("localhost", "root", "root", "TetrisGame");
     } else {
         // DotHome Server DB
         // $conn = mysqli_connect("localhost","ukakakakaka","XTP9dyzVB7Ma29m!","ukakakakaka");
